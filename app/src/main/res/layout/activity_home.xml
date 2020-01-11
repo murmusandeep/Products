@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="124dp"
+    android:layout_height="240dp"
+    tools:context=".activities.HomeActivity">
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="124dp"
+        android:layout_height="124dp"
+        android:src="@drawable/img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Alcatel Go\nWatch Black"
+        android:text="Alcatel Go\nWatch Black"
+        android:textSize="21dp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/productImage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="1000"
+        android:text="1000"
+        android:textSize="20dp"
+        android:gravity="left"
+        app:layout_constraintTop_toBottomOf="@id/productName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/productType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Mens"
+        android:text="Mens"
+        android:textSize="15dp"
+        android:gravity="left"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
