@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.categories.R;
+import com.example.categories.adapters.HomeActivityAdapter;
 import com.example.categories.api.models.Data;
 import com.example.categories.api.service.DataClient;
 import com.example.categories.api.service.ServiceGenerator;
@@ -18,12 +21,20 @@ import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private RecyclerView mRecyclerViewSection;
+
     private Data mData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        getSupportActionBar().setTitle(R.string.categories);
+
+        mRecyclerViewSection = findViewById(R.id.recycle_view_section);
+        mRecyclerViewSection.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
         getData();
     }
 
@@ -46,6 +57,8 @@ public class HomeActivity extends AppCompatActivity {
                     /*for (int i = 0; i < mData.getContent().size(); i++) {
                         Log.d("apple", mData.getContent().get(i).getName());
                     }*/
+                    HomeActivityAdapter mainActivitySectionAdapter = new HomeActivityAdapter(HomeActivity.this, mData);
+                    mRecyclerViewSection.setAdapter(mainActivitySectionAdapter);
 
                 } else {
                     Toast.makeText(HomeActivity.this, "api_response_error", Toast.LENGTH_SHORT).show();

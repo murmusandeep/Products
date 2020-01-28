@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_124dp"
+    android:layout_height="@dimen/_240dp">
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="@dimen/_124dp"
+        android:layout_height="@dimen/_124dp"
+        android:src="@drawable/img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Alcatel Go\nWatch Black"
+        android:text="@string/Alcatel_Go_Watch_Black"
+        android:textSize="@dimen/_20sp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/productImage"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="1000"
+        android:text="@string/_1000"
+        android:textSize="@dimen/_20sp"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/productName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/productType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="Mens"
+        android:text="@string/_Mens"
+        android:textSize="@dimen/_16sp"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/price"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
